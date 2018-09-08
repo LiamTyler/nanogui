@@ -313,7 +313,6 @@ void Screen::initialize(GLFWwindow *window, bool shutdownGLFWOnDestruct) {
 #endif
 */
 #if defined(NANOGUI_GLAD)
-    std::cout << "shit " << std::endl;
     if (!gladInitialized) {
         gladInitialized = true;
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
