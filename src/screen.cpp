@@ -306,12 +306,14 @@ void Screen::initialize(GLFWwindow *window, bool shutdownGLFWOnDestruct) {
 
     mPixelRatio = get_pixel_ratio(window);
 
+/*
 #if defined(_WIN32) || defined(__linux__)
     if (mPixelRatio != 1 && !mFullscreen)
         glfwSetWindowSize(window, mSize.x() * mPixelRatio, mSize.y() * mPixelRatio);
 #endif
-
+*/
 #if defined(NANOGUI_GLAD)
+    std::cout << "shit " << std::endl;
     if (!gladInitialized) {
         gladInitialized = true;
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -362,8 +364,10 @@ Screen::~Screen() {
         if (mCursors[i])
             glfwDestroyCursor(mCursors[i]);
     }
+
     if (mNVGContext)
         nvgDeleteGL3(mNVGContext);
+
     if (mGLFWWindow && mShutdownGLFWOnDestruct)
         glfwDestroyWindow(mGLFWWindow);
 }

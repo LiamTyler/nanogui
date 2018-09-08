@@ -15,6 +15,7 @@
 
 #include <nanogui/common.h>
 
+/*
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 #if defined(NANOGUI_GLAD)
     #if defined(NANOGUI_SHARED) && !defined(GLAD_GLAPI_EXPORT)
@@ -30,6 +31,13 @@
     #endif
 #endif
 #endif // DOXYGEN_SHOULD_SKIP_THIS
+*/
+
+#ifndef GLAD_GLAPI_EXPORT
+#define GLAD_GLAPI_EXPORT
+#endif
+
+#include <glad/glad.h>
 
 #include <GLFW/glfw3.h>
 #include <nanovg.h>
